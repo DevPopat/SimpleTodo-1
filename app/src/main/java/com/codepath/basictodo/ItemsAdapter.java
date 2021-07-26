@@ -33,7 +33,11 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //use layout inflator to inflate a view
 
-      View todoView=  LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1,parent,false);
+        //(5) STRETCH GOAL: We have used simple_list_item_1.xml as our layout for the ViewHolder (i.e, each row).
+        // Can you make your own custom layout and use that instead? Just switch the layout name with the one below
+        // You can create a new layout file under res/layout. Do something creative!
+
+        View todoView=  LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1,parent,false);
         //wrap it isnide a viewHolder and return it
 
         return new ViewHolder(todoView);
@@ -41,7 +45,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-    //grab the item at the position
+    //(3) We need to grab the item at 'position'. Create a variable String item and grab the item at the given position.
         String item=items.get(position);
 
         //bind the item into the specified viewholder
@@ -51,7 +55,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     // tells how many items are in the list
     @Override
     public int getItemCount() {
-        return items.size();
+        // (4) This line must return the size/length of our items list. Please change the code to do so.
+        return 1;
     }
     // container to provide easy access to view that represent each row of the list
     class ViewHolder extends RecyclerView.ViewHolder{

@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         the layout we designed
          */
 
-        btndAdd=findViewById(R.id.btnAdd);
+        //(1) The current association with btnAdd is wrong.
+        // Create the CORRECT association of btnAdd with the button in activity_main.xml
+        btndAdd= findViewById(R.id.gone);
         etItem=findViewById(R.id.etItem);
         rvItems=findViewById(R.id.rvItems);
         loadItems();
@@ -68,19 +70,19 @@ public class MainActivity extends AppCompatActivity {
         rvItems.setLayoutManager(new LinearLayoutManager(this));
 
         //here we give btnAdd some functionality
-        btndAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String todoItem =etItem.getText().toString();
-                // add item to the model
-                items.add(todoItem);
+        //(2) The code below outlines how a todo item is added to the list:
 
-                itemsAdapter.notifyItemInserted(items.size()-1);
-                etItem.setText("");
-                Toast.makeText(getApplicationContext(),"Item was added",Toast.LENGTH_SHORT).show();
-                saveItems();
-            }
-        });
+        /*  String todoItem =etItem.getText().toString();
+            // add item to the model
+            items.add(todoItem);
+
+            itemsAdapter.notifyItemInserted(items.size()-1);
+            etItem.setText("");
+            Toast.makeText(getApplicationContext(),"Item was added",Toast.LENGTH_SHORT).show();
+            saveItems();  */
+
+        //This code needs to be triggered when the btnAdd button is clicked. Please create this functionality.
+
 
     }
     private File getDataFile()
