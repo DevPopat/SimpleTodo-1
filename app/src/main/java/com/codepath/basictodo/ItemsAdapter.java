@@ -46,10 +46,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
     //(3) We need to grab the item at 'position'. Create a variable String item and grab the item at the given position.
-        String item=items.get(position);
+
 
         //bind the item into the specified viewholder
-        holder.bind(item);
+        holder.bind("");
 
     }
     // tells how many items are in the list
